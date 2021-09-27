@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import FeedbackOptions from './feedbackOptions/FeedbackOptions';
-import Notification from './notification/Notification';
 import Section from './section/Section';
 import Statistics from './statistics/Statistics';
 
@@ -38,24 +37,18 @@ class App extends Component {
             onBtnClick={this.onBtnClick}
           />
         </Section>
-        {!this.countTotalFeedback() && (
-          <Section>
-            <Notification msg={'No feedback given'} />
-          </Section>
-        )}
-        {!!this.countTotalFeedback() && (
-          <Section title={'Statistics'}>
-            <Statistics
-              good={good}
-              neutral={neutral}
-              bad={bad}
-              countTotalFeedback={this.countTotalFeedback}
-              countPositiveFeedbackPercentage={
-                this.countPositiveFeedbackPercentage
-              }
-            />
-          </Section>
-        )}
+        <Section title={'Statistics'}>
+          <Statistics
+            good={good}
+            neutral={neutral}
+            bad={bad}
+            countTotalFeedback={this.countTotalFeedback}
+            countPositiveFeedbackPercentage={
+              this.countPositiveFeedbackPercentage
+            }
+            msg={'No feedback given'}
+          />
+        </Section>
       </>
     );
   }

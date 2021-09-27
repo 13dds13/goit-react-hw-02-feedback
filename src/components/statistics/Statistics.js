@@ -1,4 +1,6 @@
 import React from 'react';
+import Notification from '../notification/Notification';
+import StatisticsData from './statisticsData/StatisticsData';
 
 const Statistics = ({
   countTotalFeedback,
@@ -6,15 +8,18 @@ const Statistics = ({
   good,
   neutral,
   bad,
+  msg,
 }) => {
-  return (
-    <>
-      <p>Good: {good}</p>
-      <p>Neutral: {neutral}</p>
-      <p>Bad: {bad}</p>
-      <p>Total {countTotalFeedback()}</p>
-      <p>PositiveFeedback {countPositiveFeedbackPercentage()}%</p>
-    </>
+  return countTotalFeedback() ? (
+    <StatisticsData
+      good={good}
+      neutral={neutral}
+      bad={bad}
+      countTotalFeedback={countTotalFeedback}
+      countPositiveFeedbackPercentage={countPositiveFeedbackPercentage}
+    />
+  ) : (
+    <Notification msg={msg} />
   );
 };
 
