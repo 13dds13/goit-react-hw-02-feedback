@@ -33,7 +33,10 @@ class App extends Component {
     return (
       <>
         <Section title={'Please leave Your feedback'}>
-          <FeedbackOptions onBtnClick={this.onBtnClick} />
+          <FeedbackOptions
+            options={Object.keys(this.state)}
+            onBtnClick={this.onBtnClick}
+          />
         </Section>
         {!this.countTotalFeedback() && (
           <Section>
