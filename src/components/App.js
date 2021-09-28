@@ -11,7 +11,7 @@ class App extends Component {
   };
 
   onBtnClick = evt => {
-    const currentBtn = evt.target.dataset.type;
+    const currentBtn = evt.target.name;
     this.setState({ [currentBtn]: this.state[currentBtn] + 1 });
   };
 
