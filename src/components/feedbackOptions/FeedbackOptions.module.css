@@ -1,0 +1,18 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.btn {
+  width: 80px;
+  height: 32px;
+  border-radius: 4px;
+  background-color: rgb(3, 148, 76);
+  font-weight: 700;
+}
+
+.btn:hover,
+.btn:focus {
+  background-color: rgb(17, 172, 82);
+  cursor: pointer;
+}
